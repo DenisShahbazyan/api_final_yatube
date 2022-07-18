@@ -1,51 +1,58 @@
-### Описание:
-Данный проект - API для сервиса Yatube.
-### Установка:
+# API для "Yatube"
+## Описание:
+Данный проект - API для сервиса [Yatube](https://github.com/DenisShahbazyan/hw05_final).
 
-Клонировать репозиторий и перейти в него в командной строке:
-
-```
+## Развертывание:
+### Запуск веб-сервера::
+- Склонируйте проект на Ваш компьютер 
+```sh 
 git clone https://github.com/DenisShahbazyan/api_final_yatube.git
-```
-
-```
+``` 
+- Перейдите в папку с проектом 
+```sh 
 cd api_final_yatube
-```
-
-Cоздать и активировать виртуальное окружение:
-
-```
-python3 -m venv env
-```
-
-```
-source env/bin/activate
-```
-
-```
-python3 -m pip install --upgrade pip
-```
-
-Установить зависимости из файла requirements.txt:
-
-```
+``` 
+- Создайте и активируйте виртуальное окружение 
+```sh 
+python -m venv venv 
+source venv/Scripts/activate 
+``` 
+- Обновите менеджер пакетов (pip) 
+```sh 
+pip install --upgrade pip 
+``` 
+- Установите необходимые зависимости 
+```sh 
 pip install -r requirements.txt
+``` 
+-   Создайте миграции
+```sh
+python ./yatube/manage.py makemigrations
+python ./yatube/manage.py migrate
 ```
+-   Создайте суперпользователя
+```sh
+python ./yatube/manage.py createsuperuser
+```
+-   Запуск сервера
+```sh
+python ./yatube/manage.py runserver
+```
+-   Сайт запуститься по адресу [http://127.0.0.1:8000](http://127.0.0.1:8000/)
 
-Выполнить миграции:
+## Системные требования:
+- [Python](https://www.python.org/) 3.10.4
 
-```
-python3 manage.py migrate
-```
+## Планы по доработке:
+>Проект сделан в учебных целях, доработка не планируется.
 
-Запустить проект:
+## Используемые технологии:
+- [Django](https://www.djangoproject.com/) 2.2.16
+- [Django REST framework](https://www.django-rest-framework.org/) 3.12.4
+- [djoser](https://djoser.readthedocs.io/en/latest/getting_started.html) 2.1.0
 
-```
-python3 manage.py runserver
-```
-### Примеры:
-Получить список постов:
+## Авторы:
+- [Denis Shahbazyan](https://github.com/DenisShahbazyan)
 
-```
-GET http://127.0.0.1:8000/posts/
-```
+## Лицензия:
+- MIT
